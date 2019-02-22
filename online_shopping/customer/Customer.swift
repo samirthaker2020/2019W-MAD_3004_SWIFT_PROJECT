@@ -54,12 +54,9 @@ class Customer:Users
     }
     func printcustdetails()
     {
-        print(super.uid!)
-        print(super.pass!)
+       
         print(self.customername!)
-        
-        
-        
+  
     }
     override func displaydata() {
        for i in customerdetails
