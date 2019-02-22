@@ -9,96 +9,63 @@
 import Foundation
 class Customer:Users
 {
+    var cid:String?
     var customername:String?
     var email:String?
     var creditcardinfo:String?
     var shipppingInfo:String?
     var address:String?
-    var customerdetails=[String:String]()
+    var customerdetails=[Customer]()
+    
     override init() {
-        super.init()
-        self.customername=String()
-        self.email=String()
+         super.init()
+        self.cid=String()
         self.creditcardinfo=String()
-        self.shipppingInfo=String()
         self.address=String()
+        self.shipppingInfo=String()
+        self.customername=String()
+    
+    }
+    init(cid:String,cname:String,email:String,ccinfo:String,shipinfo:String,address:String) {
+     super.init()
+       super.uid=uid
+        super.pass=pass
+        self.cid=cid
+        self.customername=cname
+        self.email=email
+        self.creditcardinfo=ccinfo
+        self.shipppingInfo=shipinfo
+        self.address=address
         
     }
     
-    func login() ->Bool
+    func login(id:String,pass:String)  ->Bool
     {
-        let check:Bool?
-        print("Userid:::")
-        let id = readLine()!
-        print("password:::")
-        let pass=readLine()!
-        check = super.verifylogin(id: id, p: pass)
-        return check!
+        let  check:Bool = super.verifylogin(id: id, p: pass)
+        return check
+        
     }
     
-    
-    
-    
-    func register() ->Bool
+    func register(userlogin:[Users],cdetails:[Customer])
     {
-        var c:Bool=false
+        super.userlogin=userlogin
+        customerdetails=cdetails
         
-        print("Enter Customer Name::")
-        customername=readLine()!
-        print("Enter UserID::")
-        super.uid = readLine()!
-        print("Enter Password::")
-        super.pass = readLine()!
-        print("Enter Address::")
-        address = readLine()!
-        print("Enter Email::")
-        email = readLine()!
-        print("Enter Credit Card Info::")
-        creditcardinfo = readLine()!
-        print("Enter Shipping Info::")
-        shipppingInfo = readLine()!
-      //  let count=String(super.login.count+1)
-        c=super.add(uid: super.uid!, pass: super.pass!)
-        if(c==true)
-        {
-            customerdetails["uid"]=super.uid
-            customerdetails["name"]=customername
-            customerdetails["address"]=address
-            customerdetails["email"]=email
-            customerdetails["ccinfo"]=creditcardinfo
-            customerdetails["shipinfo"]=shipppingInfo
-            c=true
-            
-            
-        }else{
-            c=false
+    }
+    func printcustdetails()
+    {
+        print(super.uid!)
+        print(super.pass!)
+        print(self.customername!)
+        
+        
+        
+    }
+    override func displaydata() {
+       for i in customerdetails
+       {
+        i.printcustdetails()
         }
-        
-        
-        return c
     }
-    
-    
-    
-    
-    
-    func disp()
-    {
-          print("------------------------------------")
-        for (key,value) in login{
-            print("key:\(key) value:\(value)")
-    
-        }
-           print("------------------------------------")
-    }
-    
-    func disp1()
-    {
-       print("------------------------------------")
-        for (key,value) in customerdetails{
-            print("key:\(key) value:\(value)")
-            
-        }
-         print("------------------------------------")
-    }
+     
     }

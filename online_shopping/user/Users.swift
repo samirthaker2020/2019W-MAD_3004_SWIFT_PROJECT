@@ -9,15 +9,21 @@
 import Foundation
 class Users:IDisplay
 {
+    func displaydata() {
+         print("")
+    }
+    var ucid:String?
     var uid:String?
     var pass:String?
+    var userlogin=[Users]()
     var check:Bool?
     init() {
         self.uid=String()
         self.pass=String()
     }
-    init(uid:String,pass:String )
+    init(ucid:String,uid:String,pass:String )
     {
+        self.ucid = ucid
         self.uid=uid
         self.pass=pass
        
@@ -55,25 +61,22 @@ class Users:IDisplay
         }
     }
     
-    var login=[String:String]()
-  
+   
     
-    func verifylogin(id:String,p:String) ->Bool
+    func verifylogin(id:String,p:String)  ->Bool
   {
-    login["mani"]="tuli"
-        if(login.keys.contains(id) && login.values.contains(p))
-        {
-        check=true
-        }
-    else
-        {
-            check=false
-    }
-    return check!
-    }
-    public func add(uid:String,pass:String) ->Bool
+    var check:Bool?
+    for i in userlogin
     {
-        self.login[uid]=pass
-        return true
+         if(i.uid==id && i.pass==p)
+         {
+            check=true
+        }else
+         {
+            check=false
+        }
     }
+       return check!
+    }
+    
 }
