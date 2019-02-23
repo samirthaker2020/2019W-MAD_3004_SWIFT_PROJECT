@@ -12,16 +12,17 @@ class Users:IDisplay
     func displaydata() {
          print("")
     }
-    var ucid:String?
+    var ucid:Int?
     var uid:String?
     var pass:String?
-    var userlogin=[Users]()
+    //var userlogin=[Users]()
+    var userlogin=Dictionary<String,Users>()
     var check:Bool?
     init() {
         self.uid=String()
         self.pass=String()
     }
-    init(ucid:String,uid:String,pass:String )
+    init(ucid:Int,uid:String,pass:String )
     {
         self.ucid = ucid
         self.uid=uid
@@ -63,20 +64,22 @@ class Users:IDisplay
     
    
     
-    func verifylogin(id:String,p:String)  ->Bool
+    func verifylogin(id:String,p:String)   ->Bool
   {
-    var check:Bool?
-    for i in userlogin
+    
+    if  let u = userlogin[id]
     {
-         if(i.uid==id && i.pass==p)
-         {
-            check=true
-        }else
-         {
-            check=false
+        if u.pass == p{
+        check=true
+        }
+        else{
+            check = false
         }
     }
-       return check!
+    else
+    {
+        check=false
     }
-    
+ return check!
+}
 }

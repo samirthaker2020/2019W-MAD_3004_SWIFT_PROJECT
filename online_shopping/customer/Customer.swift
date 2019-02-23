@@ -9,24 +9,24 @@
 import Foundation
 class Customer:Users
 {
-    var cid:String?
+    var cid:Int?
     var customername:String?
     var email:String?
     var creditcardinfo:String?
     var shipppingInfo:String?
     var address:String?
-    var customerdetails=[Customer]()
+    var customerdetails=Dictionary<Int,Customer>()
     
     override init() {
          super.init()
-        self.cid=String()
+        self.cid=Int()
         self.creditcardinfo=String()
         self.address=String()
         self.shipppingInfo=String()
         self.customername=String()
     
     }
-    init(cid:String,cname:String,email:String,ccinfo:String,shipinfo:String,address:String) {
+    init(cid:Int,uid:String,cname:String,email:String,ccinfo:String,shipinfo:String,address:String) {
      super.init()
        super.uid=uid
         super.pass=pass
@@ -39,29 +39,42 @@ class Customer:Users
         
     }
     
-    func login(id:String,pass:String)  ->Bool
+    func login(id:String,pass:String) ->Bool
     {
-        let  check:Bool = super.verifylogin(id: id, p: pass)
+       let  check:Bool = super.verifylogin(id: id, p: pass)
         return check
         
     }
     
-    func register(userlogin:[Users],cdetails:[Customer])
+    func register(cid:Int,cust:Customer,user:Users)
     {
-        super.userlogin=userlogin
-        customerdetails=cdetails
+        customerdetails.updateValue(cust, forKey: cid)
         
+        super.userlogin.updateValue(user, forKey: super.uid!)
     }
-    func printcustdetails()
-    {
-       
-        print(self.customername!)
-  
-    }
+    
     override func displaydata() {
-       for i in customerdetails
-       {
-        i.printcustdetails()
+        for (k,v) in customerdetails
+        {
+            print("key:\(k)")
+            print("name:\(v.customername!)")
+            print("userid:\(v.uid!)")
+            print("address:\(v.address!)")
+            print("cust id:\(v.cid!)")
+            print("email:\(v.email!)")
+            print("ccinfo:\(v.creditcardinfo!)")
+            print("value:\(v.shipppingInfo!)")
+            
+            
+            
+            
+        }
+        print("---------------------------")
+        for (k,v) in super.userlogin
+        {
+            print("cust id:\(k)")
+            print("userid:\(v.uid!)")
+            print("password:\(v.pass!)")
         }
     }
      

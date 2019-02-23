@@ -16,13 +16,14 @@ var check:Bool=false
 var customername:String?
 var uid:String?
 var pass:String?
+var uid1:String?
+var pass1:String?
 var address:String?
 var email:String?
 var credicardinfo:String?
 var shippinginfo:String?
 var no:Int?
-var cust:[Customer]
-var user:[Users]
+
 repeat{
     print("Please select an option: \n1 - Register \n2 - Login \n3 - Display \n 4.Exit")
     n = Int(readLine()!)
@@ -30,10 +31,7 @@ repeat{
     switch n{
     case 1:
         
-     print("Enter no of user")
-     no=Int(readLine()!)
-    for  i in 0...no!-1
-    {
+  
         print("Enter Customer Name::")
          customername=readLine()!
         print("Enter UserID::")
@@ -49,17 +47,17 @@ repeat{
         print("Enter Shipping Info::")
             shippinginfo = readLine()!
       
-     
-        let cust = Customer(cid: "1", cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
-        let user   = Users(ucid:"1",uid:uid!,pass:pass!)
-    c.register(userlogin: [user], cdetails: [cust])
-        }
+        var random=Int.random(in: 0...100)
+        let cust = Customer(cid: random,uid:uid!, cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
+        let user   = Users(ucid:random,uid:uid!,pass:pass!)
+        c.register(cid:random,cust:cust,user:user)
+   
     case 2:
         print("Enter UserID::")
-        let uid = readLine()!
+        let uid1 = readLine()!
         print("Enter Password::")
-        let  pass = readLine()!
-        check = c.login(id:uid,pass:pass)
+        let  pass1 = readLine()!
+        check = c.login(id:uid1,pass:pass1)
        c.displayData(msg: check, no: 2)
       
       
