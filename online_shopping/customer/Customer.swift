@@ -15,7 +15,7 @@ class Customer:Users
     var creditcardinfo:String?
     var shipppingInfo:String?
     var address:String?
-    var customerdetails=Dictionary<Int,Customer>()
+    var customerdetails=Dictionary<String,Customer>()
     
     override init() {
          super.init()
@@ -46,36 +46,16 @@ class Customer:Users
         
     }
     
-    func register(cid:Int,cust:Customer,user:Users)
+    func register(cid:Int,usid:String,cust:Customer,user:Users)
     {
-        customerdetails.updateValue(cust, forKey: cid)
-        
-        super.userlogin.updateValue(user, forKey: super.uid!)
+         customerdetails[usid]=cust
+  super.userlogin[usid]=user
     }
     
     override func displaydata() {
-        for (k,v) in customerdetails
-        {
-            print("key:\(k)")
-            print("name:\(v.customername!)")
-            print("userid:\(v.uid!)")
-            print("address:\(v.address!)")
-            print("cust id:\(v.cid!)")
-            print("email:\(v.email!)")
-            print("ccinfo:\(v.creditcardinfo!)")
-            print("value:\(v.shipppingInfo!)")
-            
-            
-            
-            
+        print(super.userlogin)
+        print(customerdetails)
         }
-        print("---------------------------")
-        for (k,v) in super.userlogin
-        {
-            print("cust id:\(k)")
-            print("userid:\(v.uid!)")
-            print("password:\(v.pass!)")
-        }
-    }
+    
      
     }

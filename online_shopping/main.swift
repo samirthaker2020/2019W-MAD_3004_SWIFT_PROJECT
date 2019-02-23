@@ -48,9 +48,9 @@ repeat{
             shippinginfo = readLine()!
       
         var random=Int.random(in: 0...100)
-        let cust = Customer(cid: random,uid:uid!, cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
-        let user   = Users(ucid:random,uid:uid!,pass:pass!)
-        c.register(cid:random,cust:cust,user:user)
+        var cust = Customer(cid: random,uid:uid!, cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
+        var user   = Users(uid:uid!,pass:pass!)
+        c.register(cid:random,usid:uid!,cust:cust,user:user)
    
     case 2:
         print("Enter UserID::")

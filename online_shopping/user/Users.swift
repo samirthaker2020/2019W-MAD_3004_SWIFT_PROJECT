@@ -22,9 +22,9 @@ class Users:IDisplay
         self.uid=String()
         self.pass=String()
     }
-    init(ucid:Int,uid:String,pass:String )
+    init(uid:String,pass:String )
     {
-        self.ucid = ucid
+       
         self.uid=uid
         self.pass=pass
        
