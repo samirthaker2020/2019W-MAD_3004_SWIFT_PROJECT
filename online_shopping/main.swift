@@ -23,7 +23,7 @@ var email:String?
 var credicardinfo:String?
 var shippinginfo:String?
 var no:Int?
-
+var uno:Int?
 repeat{
     print("Please select an option: \n1 - Register \n2 - Login \n3 - Display \n 4.Exit")
     n = Int(readLine()!)
@@ -59,7 +59,26 @@ repeat{
         let  pass1 = readLine()!
         check = c.login(id:uid1,pass:pass1)
        c.displayData(msg: check, no: 2)
-      
+      if(check==true)
+      {
+        var username:String?
+        username=uid!
+        repeat{
+              print("-------------------WELCOME-------------------")
+        
+            print("User::\(username!)")
+               print("---------------------------------------------")
+            print("Please select an option: \n1 - View Product \n2 - View Order \n3 - Checkout \n 4.Exit")
+            n = Int(readLine()!)
+        }
+            while(n! <= 4)
+
+        
+        }
+        else
+      {
+        
+        }
       
     case 3:  c.displaydata()
        
