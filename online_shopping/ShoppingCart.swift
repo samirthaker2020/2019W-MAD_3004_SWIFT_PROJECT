@@ -18,20 +18,20 @@ class ShoppingCart{
     
     func addToCart(){
         var addToCartResponse = String()
-        itemList.append("1- Vincent Blue Polarized Sunglasses")
-        itemList.append("2- Matte Black Wayfarer Shape Sunglasses")
-        itemList.append("3- Golden Rim Sunglasses")
-        itemList.append("4- Green Round Rim Polarized Sunglasses")
-        itemList.append("5- Black Grey Full Rectangle Sunglasses")
-        itemList.append("6- Oakley Unisex Sunglasses")
-        itemList.append("7- Exit\n")
+        itemList.append("|1| Vincent Blue Polarized Sunglasses    |\n -----------------------------------------")
+        itemList.append("|2| Matte Black Wayfarer Shape Sunglasses|\n -----------------------------------------")
+        itemList.append("|3| Golden Rim Sunglasses                |\n -----------------------------------------")
+        itemList.append("|4| Green Round Rim Polarized Sunglasses 1|\n -----------------------------------------")
+        itemList.append("|5| Black Grey Full Rectangle Sunglasses |\n -----------------------------------------")
+        itemList.append("|6| Oakley Unisex Sunglasses             |\n -----------------------------------------")
+        itemList.append("|7| Exit                                 |\n -----------------------------------------")
         repeat{
-            print("Please select the product you want to buy: ")
+            print("Please select the product you want to buy: \n-----------------------------------------")
             for v in itemList{
                 print(v)
             }
             let selectedProduct = Int(readLine()!)!
-            print("Please enter the quantity?")
+            print("***** Please enter the quantity? *****")
             switch selectedProduct{
             case 1:
                 CustProductQt = readLine()!
@@ -79,9 +79,11 @@ class ShoppingCart{
             print("Do you want to Continue? (Y/N)")
             addToCartResponse = readLine()!
         }while(addToCartResponse.YesOrNo())
-        
-        func displatData(){
-            
-        }
     }
+    
+    func displayData(){
+        for (k,v) in orderedProduct{
+            print("Key: \(k) Value: \(v)")
+        }
+}
 }

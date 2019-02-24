@@ -61,7 +61,8 @@ repeat{
         check = c.login(id:uid1,pass:pass1)
        c.displayData(msg: check, no: 2)
         if check{
-      cart.addToCart()
+            cart.addToCart()
+            cart.displayData()
         }
     case 3:  c.displaydata()
        
