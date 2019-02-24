@@ -65,13 +65,13 @@ repeat{
       if(check==true)
       {
         var username:String?
-        username=uid!
+        username=uid1
         repeat{
               print("-------------------WELCOME-------------------")
         
             print("User::\(username!)")
                print("---------------------------------------------")
-            print("Please select an option: \n1 - View Product \n2 - View Order \n3 - Checkout \n 4.Exit")
+            print("Please select an option: \n1 - View Product \n2 - View Order History \n3 - View Profile \n4 - Update Profile \n5 - Make an Order  \n6 View Cart Items \n 7.Exit")
             uno = Int(readLine()!)
             switch uno
             {
@@ -85,12 +85,21 @@ repeat{
             for P in totalProducts{
                 P.displaydata()
                 }
-                
+            case 2:
+            break
+            case 3:
+                c.viewprofile(user: username!)
+            case 4:
+                  c.viewprofile(user: username!)
+                  print("------------------------------------------------")
+                var updateno:Int?
+                  print("Enter Number from above to update :::: ")
+                updateno=Int(readLine())
             default:
                 print(" ")
             }
         }
-            while(n! < 4)
+            while(uno! < 6)
 
         
         }

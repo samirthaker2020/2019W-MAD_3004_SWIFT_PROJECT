@@ -57,6 +57,19 @@ class Customer:Users
         print(customerdetails)
        
         }
-    
+    func viewprofile(user:String)
+    {
+        if let u=customerdetails[user]
+        {
+            print("----------Customer-Profile------------")
+            print("-----User:-\(user)--CustomerID-\(u.cid!)--------")
+             print("--------------------------------------")
+            print("1 - Customer Name:\(u.customername!)")
+            print("2 - Customer Address:\(u.address!)")
+            print("3 - Customer Email:\(u.email!)")
+            print("4 - Credicard Info:\(u.creditcardinfo!)")
+            print("5 - Shipping Info:\(u.shipppingInfo!)")
+        }
+    }
      
     }
