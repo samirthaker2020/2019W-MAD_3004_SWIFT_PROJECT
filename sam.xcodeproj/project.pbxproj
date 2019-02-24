@@ -11,6 +11,7 @@
 		221C826F221C756600ABDAA7 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C826E221C756600ABDAA7 /* Users.swift */; };
 		221C8271221C779000ABDAA7 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C8270221C779000ABDAA7 /* Customer.swift */; };
 		221C8276221C808700ABDAA7 /* IDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C8275221C808700ABDAA7 /* IDisplay.swift */; };
+		22B1874822225A01007A95DF /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1874722225A01007A95DF /* Products.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		221C826E221C756600ABDAA7 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		221C8270221C779000ABDAA7 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		221C8275221C808700ABDAA7 /* IDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IDisplay.swift; path = ../../../../project_swift/project_swift/project_swift/display/IDisplay.swift; sourceTree = "<group>"; };
+		22B1874722225A01007A95DF /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		221C8266221C754C00ABDAA7 /* online_shopping */ = {
 			isa = PBXGroup;
 			children = (
+				22B1874922225A0E007A95DF /* products */,
 				221C8274221C804A00ABDAA7 /* display */,
 				221C8273221C7F8000ABDAA7 /* customer */,
 				221C8272221C7F6700ABDAA7 /* user */,
@@ -93,6 +96,14 @@
 				221C8275221C808700ABDAA7 /* IDisplay.swift */,
 			);
 			path = display;
+			sourceTree = "<group>";
+		};
+		22B1874922225A0E007A95DF /* products */ = {
+			isa = PBXGroup;
+			children = (
+				22B1874722225A01007A95DF /* Products.swift */,
+			);
+			path = products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			files = (
 				221C8276221C808700ABDAA7 /* IDisplay.swift in Sources */,
 				221C8271221C779000ABDAA7 /* Customer.swift in Sources */,
+				22B1874822225A01007A95DF /* Products.swift in Sources */,
 				221C8268221C754D00ABDAA7 /* main.swift in Sources */,
 				221C826F221C756600ABDAA7 /* Users.swift in Sources */,
 			);

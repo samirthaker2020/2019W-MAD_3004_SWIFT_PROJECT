@@ -69,9 +69,25 @@ repeat{
             print("User::\(username!)")
                print("---------------------------------------------")
             print("Please select an option: \n1 - View Product \n2 - View Order \n3 - Checkout \n 4.Exit")
-            n = Int(readLine()!)
+            uno = Int(readLine()!)
+            switch uno
+            {
+            case 1:
+            var product1 = Products(productid: "P001", productname: "Hard Drive", productprice: 120.00)
+            var product2 = Products(productid: "P002", productname: "ZIP drive", productprice: 90.00)
+            var product3 = Products(productid: "P003", productname: "Floppy disk", productprice: 50.00)
+            var product4 = Products(productid: "P004", productname: "Monitor", productprice: 300.00)
+            var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
+            var totalProducts = [product1,product2,product3,product4,product5]
+            for P in totalProducts{
+                P.displaydata()
+                }
+                
+            default:
+                print(" ")
+            }
         }
-            while(n! <= 4)
+            while(n! < 4)
 
         
         }
