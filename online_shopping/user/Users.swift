@@ -56,7 +56,16 @@ class Users:IDisplay
                 print("Try again later")
             }
         case 3:
-            break
+            if(msg==true)
+            {
+                print("Customer Name Updated Sucessfully")
+            }else if(msg==false)
+            {
+                print("Failed")
+            }else
+            {
+                print("Try again later")
+            }
         default:
             break
         }

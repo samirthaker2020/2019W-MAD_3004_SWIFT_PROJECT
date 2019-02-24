@@ -71,5 +71,24 @@ class Customer:Users
             print("5 - Shipping Info:\(u.shipppingInfo!)")
         }
     }
+    func updateprofile(username:String,value:String,caseno:Int) -> Bool
+    {
+        var c:Bool?
+        switch caseno {
+        case 1:
+            if let u=customerdetails[username]
+            {
+                u.customername=value
+                c=true
+            }
+            else
+            {
+                c=false
+            }
+        default:
+            print(" ")
+        }
+        return c!
+    }
      
     }

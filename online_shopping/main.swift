@@ -94,7 +94,18 @@ repeat{
                   print("------------------------------------------------")
                 var updateno:Int?
                   print("Enter Number from above to update :::: ")
-                updateno=Int(readLine())
+                updateno=Int(readLine()!)
+                switch updateno
+                {
+                case 1:
+                    print("Enter New Customer Name:")
+                    var name:String?
+                        name=readLine()!
+                  check =   c.updateprofile(username: uid1, value: name!, caseno: 1)
+                    c.displayData(msg: check, no: 3)
+                default:
+                    print(" ")
+                }
             default:
                 print(" ")
             }
