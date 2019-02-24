@@ -10,6 +10,7 @@ import Foundation
 
 var n:Int?
 let c=Customer()
+let cart = ShoppingCart()
 
 var count:Int=0
 var check:Bool=false
@@ -25,7 +26,7 @@ var shippinginfo:String?
 var no:Int?
 
 repeat{
-    print("Please select an option: \n1 - Register \n2 - Login \n3 - Display \n 4.Exit")
+    print("Please select an option: \n1 - Register \n2 - Login \n3 - Display \n4 - Exit")
     n = Int(readLine()!)
     
     switch n{
@@ -47,9 +48,9 @@ repeat{
         print("Enter Shipping Info::")
             shippinginfo = readLine()!
       
-        var random=Int.random(in: 0...100)
-        var cust = Customer(cid: random,uid:uid!, cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
-        var user   = Users(uid:uid!,pass:pass!)
+        let random=Int.random(in: 0...100)
+        let cust = Customer(cid: random,uid:uid!, cname: customername!, email: email!, ccinfo: credicardinfo!, shipinfo: shippinginfo!, address: address!)
+        let user   = Users(uid:uid!,pass:pass!)
         c.register(cid:random,usid:uid!,cust:cust,user:user)
    
     case 2:
@@ -59,8 +60,9 @@ repeat{
         let  pass1 = readLine()!
         check = c.login(id:uid1,pass:pass1)
        c.displayData(msg: check, no: 2)
-      
-      
+        if check{
+      cart.addToCart()
+        }
     case 3:  c.displaydata()
        
     default:

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Users:IDisplay
+class Users
 {
     func displaydata() {
          print("")
