@@ -55,6 +55,7 @@ class Customer:Users
     override func displaydata() {
         print(super.userlogin)
         print(customerdetails)
+       
         }
     
      

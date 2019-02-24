@@ -18,6 +18,8 @@ var uid:String?
 var pass:String?
 var uid1:String?
 var pass1:String?
+var adminid:String?
+var adminpass:String?
 var address:String?
 var email:String?
 var credicardinfo:String?
@@ -25,7 +27,7 @@ var shippinginfo:String?
 var no:Int?
 var uno:Int?
 repeat{
-    print("Please select an option: \n1 - Register \n2 - Login \n3 - Display \n 4.Exit")
+    print("Please select an option: \n1 - Register \n2 - User-Login \n3 - Admin-Login \n 4.Dispaly  \n 5.Exit")
     n = Int(readLine()!)
     
     switch n{
@@ -53,6 +55,7 @@ repeat{
         c.register(cid:random,usid:uid!,cust:cust,user:user)
    
     case 2:
+        print("--------------USER--LOGIN--------------------")
         print("Enter UserID::")
         let uid1 = readLine()!
         print("Enter Password::")
@@ -93,10 +96,19 @@ repeat{
         }
         else
       {
-        
+           c.displayData(msg: check, no: 2)
         }
       
-    case 3:  c.displaydata()
+    case 3:
+        print("--------------ADMIN--LOGIN--------------------")
+        print("Enter UserID::")
+         adminid = readLine()!
+        print("Enter Password::")
+          adminpass = readLine()!
+        
+    case 4:
+        c.displaydata()
+        
        
     default:
         break
