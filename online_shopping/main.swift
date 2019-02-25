@@ -158,7 +158,7 @@ repeat{
                 p1.displaydata()
                 print("----------------------------------")
                 print("Enter Product Number:")
-                var pno=readLine()!
+                var pno=readLine()!.uppercased()
                 print("Enter Product Quantity:")
                 var pqty=Int(readLine()!)
                 if let j=p1.productdetails[pno]
@@ -190,7 +190,7 @@ repeat{
                 s.viewcart()
                 print("----------------------------------")
                 print("Enter Product Number:")
-                var pno=readLine()!
+                var pno=readLine()!.uppercased()
                 print("Enter New Product Quantity:")
                 var pqty=Int(readLine()!)
               
@@ -201,7 +201,7 @@ repeat{
                 s.viewcart()
                 print("----------------------------------")
                 print("Enter Product Number:")
-                var pno=readLine()!
+                var pno=readLine()!.uppercased()
                check = s.removeProduct(productId: pno)
                 s.displayData(msg: check, no: 3)
             default:

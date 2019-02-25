@@ -9,6 +9,10 @@
 import Foundation
 class Users:IDisplay
 {
+    func displaydata(msg: Bool, no: Int) {
+        print(" ")
+    }
+    
     func displaydata() {
          print("")
     }

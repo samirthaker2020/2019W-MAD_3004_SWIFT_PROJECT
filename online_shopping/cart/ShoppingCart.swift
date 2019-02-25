@@ -5,6 +5,10 @@ import Foundation
 
 class ShoppingCart:IDisplay
 {
+    func displaydata(msg: Bool, no: Int) {
+        print(" ")
+    }
+    
    
     
     private var cartid:Int?

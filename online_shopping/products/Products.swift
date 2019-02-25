@@ -9,6 +9,10 @@
 import Foundation
 class Products:IDisplay
 {
+    func displaydata(msg: Bool, no: Int) {
+         print(" ")
+    }
+    
     
     
     let productid:String
