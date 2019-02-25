@@ -85,7 +85,7 @@ repeat{
         
             print("User::\(username!)")
                print("---------------------------------------------")
-            print("Please select an option: \n1 - View Product \n2 - View Order History \n3 - View Profile \n4 - Update Profile \n5 - Make an Order  \n6 View Cart Items \n 7.Update Quantity")
+            print("Please select an option: \n1 - View Product \n2 - Checkout--> \n3 - View Profile \n4 - Update Profile \n5 - Make an Order  \n6 View Cart Items \n7 - Update Quantity \n8 - Remove Item from Cart")
             uno = Int(readLine()!)
             switch uno
             {
@@ -138,6 +138,8 @@ repeat{
                     print(" ")
                 }
             case 5:
+                p1.displaydata()
+                print("----------------------------------")
                 print("Enter Product Number:")
                 var pno=readLine()!
                 print("Enter Product Quantity:")
@@ -162,7 +164,7 @@ repeat{
                     
                   
                 }
-                else{print("fail")}
+                else{print("Try..again..later")}
                 
             case 6:
                 s.viewcart()
@@ -177,6 +179,14 @@ repeat{
               
                    check = s.updatequantity(pno:pno,pqty:pqty!)
                  s.displayData(msg: check, no: 1)
+                
+            case 8:
+                s.viewcart()
+                print("----------------------------------")
+                print("Enter Product Number:")
+                var pno=readLine()!
+               check = s.removeProduct(productId: pno)
+                s.displayData(msg: check, no: 3)
             default:
                 print(" ")
             }

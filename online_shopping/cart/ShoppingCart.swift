@@ -64,6 +64,15 @@ class ShoppingCart:IDisplay
                 {
                     print("Invalid!!!try again later..")
                 }
+            case 3:
+                if(msg==true)
+                {
+                    print("Product Removed Sucessfully")
+                }
+                else
+                {
+                    print("Invalid!!!try again later..")
+                }
             default:
                 print(" ")
             }
@@ -93,6 +102,19 @@ class ShoppingCart:IDisplay
                 check=false
             }
         }
+        return check
+    }
+    
+    func removeProduct(productId:String)->Bool {
+        var arrayNewProducts:[ShoppingCart] = [ShoppingCart]()
+        for product in self.productList {
+            if product.productid != productId {
+                arrayNewProducts.append(product)
+            }
+            else{check=false}
+        }
+        self.productList = arrayNewProducts
+        check=true
         return check
     }
 }
