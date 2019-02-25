@@ -26,7 +26,7 @@ var credicardinfo:String?
 var shippinginfo:String?
 var no:Int?
 var uno:Int?
-
+var cartID:Int?
 var product1 = Products(productid: "P001", productname: "Hard Drive", productprice: 120.00)
 var product2 = Products(productid: "P002", productname: "ZIP drive", productprice: 90.00)
 var product3 = Products(productid: "P003", productname: "Floppy disk", productprice: 50.00)
@@ -85,7 +85,7 @@ repeat{
         
             print("User::\(username!)")
                print("---------------------------------------------")
-            print("Please select an option: \n1 - View Product \n2 - View Order History \n3 - View Profile \n4 - Update Profile \n5 - Make an Order  \n6 View Cart Items \n 7.Exit")
+            print("Please select an option: \n1 - View Product \n2 - View Order History \n3 - View Profile \n4 - Update Profile \n5 - Make an Order  \n6 View Cart Items \n 7.Update Quantity")
             uno = Int(readLine()!)
             switch uno
             {
@@ -144,14 +144,21 @@ repeat{
                 var pqty=Int(readLine()!)
                 if let j=p1.productdetails[pno]
                 {
-                      let cartID = Int.random(in: 0...999)
+                    if s.productList.isEmpty
+                    {
+                        cartID = Int.random(in: 0...999)
+                    }
+                    else
+                    {
+                        
+                    }
                     
-                
-                    var shop=ShoppingCart(proid:pno,cartid:cartID,qty:pqty!,dateadded:Date())
+                    var shop=ShoppingCart(proid:pno,cartid:cartID!,qty:pqty!,dateadded:Date())
                    
-                  //  s.addcartitem(shop: shop)
-                    s.productList.append(shop)
-                    print(s.productList.count)
+                    check=s.addcartitem(shop: shop)
+                    s.displayData(msg: check, no: 2)
+                  //  s.productList.append(shop)
+                   
                     
                   
                 }
@@ -159,11 +166,22 @@ repeat{
                 
             case 6:
                 s.viewcart()
+                
+            case 7:
+                s.viewcart()
+                print("----------------------------------")
+                print("Enter Product Number:")
+                var pno=readLine()!
+                print("Enter New Product Quantity:")
+                var pqty=Int(readLine()!)
+              
+                   check = s.updatequantity(pno:pno,pqty:pqty!)
+                 s.displayData(msg: check, no: 1)
             default:
                 print(" ")
             }
         }
-            while(uno! < 6)
+            while(uno! <= 8)
 
         
         }

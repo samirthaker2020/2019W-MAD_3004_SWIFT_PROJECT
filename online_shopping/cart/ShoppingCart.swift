@@ -3,8 +3,10 @@
 
 import Foundation
 
-class ShoppingCart
+class ShoppingCart:IDisplay
 {
+   
+    
     private var cartid:Int?
     var productid:String?
     var quantity:Int?
@@ -31,24 +33,67 @@ class ShoppingCart
         self.dateadded=dateadded
     }
   
-    func addcartitem(shop:ShoppingCart)
+    func addcartitem(shop:ShoppingCart)->Bool
     {
-        self.productList.append(shop)
-        print(productList)
+        do{
+            try  self.productList.append(shop)
+            check=true
+        }
+        catch{check=false}
+        return check
     }
-   func disp()
-   {
   
-    print("\( self.productid!)      ||   \(self.cartid!)      ||      \(self.quantity!)    ||  \(self.dateadded)")
-    }
+
+        func displayData(msg: Bool, no: Int) {
+            switch no {
+            case 1:
+                if(msg==true)
+                {
+                     print("Quantity Updated Sucessfully")
+                }
+                else
+                {
+                    print("Invalid!!!try again later..")
+                }
+            case 2:
+                if(msg==true)
+                {
+                    print("Product Added Sucessfully")
+                }
+                else
+                {
+                    print("Invalid!!!try again later..")
+                }
+            default:
+                print(" ")
+            }
+        }
+        
+        func displaydata() {
+            print("\( self.productid!)      ||   \(self.cartid!)      ||      \(self.quantity!)    ||  \(self.dateadded)")
+        }
     func viewcart()
     {  print("----------------------CART---------------------------")
         print("Product ID  ||   CartID   ||     Quantity   ||  Date")
         for j in self.productList {
-         j.disp()
+            j.displaydata()
         }
-       
-      
+    }
+    func updatequantity(pno:String,pqty:Int) ->Bool
+    {
+        for i in productList
+        {
+            if (i.productid==pno)
+            {
+                i.quantity=pqty
+                check=true
+            }
+            else
+            {
+                check=false
+            }
+        }
+        return check
     }
 }
 
