@@ -8,7 +8,7 @@ import Foundation
     private var oderid:Int?
     var datecreated:String?
     var dateshipped:String?
-    var custname:String?
+    var cname:String?
     var custid:String?
     var status:String?
     var shipid:String?
@@ -17,7 +17,7 @@ import Foundation
         self.oderid=Int()
         self.datecreated=String()
         self.dateshipped=String()
-        self.custname=String()
+        self.cname=String()
         self.custid=String()
         self.status=String()
         self.shipid=String()
@@ -29,7 +29,7 @@ import Foundation
         self.oderid=oid
         self.datecreated=odate
         self.dateshipped=oship
-        self.custname = cname
+        self.cname = cname
         self.custid=custid
         self.status=status
         self.shipid=shipid

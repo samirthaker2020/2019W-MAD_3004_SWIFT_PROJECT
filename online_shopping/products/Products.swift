@@ -14,13 +14,19 @@ class Products:IDisplay
     let productid:String
     var productname:String
     var productprice:Float
+    
    // var productquantity:Int
      var productdetails=Dictionary<String,Products>()
+    init() {
+        self.productid=String()
+        self.productname=String()
+        self.productprice=Float()
+        
+    }
     init(productid:String, productname:String, productprice:Float) {
         self.productid = productid
         self.productname = productname
-        self.productprice = productprice
-     
+        self.productprice = productprice 
     }
     
     func displayData(msg: Bool, no: Int) {
@@ -28,15 +34,18 @@ class Products:IDisplay
     }
     func addproducts(pid:String,prod:Products)
     {
-        productdetails[pid]=prod
+        productdetails.updateValue(prod, forKey: pid)
     }
     func displaydata() {
         print("------------------------------------------------------------------------------")
         print("Product ID:     ||   Product name:       ||   Product price:  ")
-          print("------------------------------------------------------------------------------")
-        print("\(self.productid)            ||   \(self.productname)         ||           \(self.productprice)")
+        print("------------------------------------------------------------------------------")
         
-       
+        for (_,v) in productdetails
+        {
+        print("\(v.productid)            ||   \(v.productname)         ||           \(v.productprice)")
+    
+        }
      
     }
 }

@@ -26,6 +26,20 @@ var credicardinfo:String?
 var shippinginfo:String?
 var no:Int?
 var uno:Int?
+
+var product1 = Products(productid: "P001", productname: "Hard Drive", productprice: 120.00)
+var product2 = Products(productid: "P002", productname: "ZIP drive", productprice: 90.00)
+var product3 = Products(productid: "P003", productname: "Floppy disk", productprice: 50.00)
+var product4 = Products(productid: "P004", productname: "Monitor", productprice: 300.00)
+var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
+var totalProducts = [product1,product2,product3,product4,product5]
+var p1=Products()
+p1.addproducts(pid: "P001", prod: product1)
+p1.addproducts(pid: "P002", prod: product2)
+p1.addproducts(pid: "P003", prod: product3)
+p1.addproducts(pid: "P004", prod: product4)
+p1.addproducts(pid: "P005", prod: product5)
+
 repeat{
     print("Please select an option: \n1 - Register \n2 - User-Login \n3 - Admin-Login \n 4.Dispaly  \n 5.Exit")
     n = Int(readLine()!)
@@ -76,15 +90,8 @@ repeat{
             switch uno
             {
             case 1:
-            var product1 = Products(productid: "P001", productname: "Hard Drive", productprice: 120.00)
-            var product2 = Products(productid: "P002", productname: "ZIP drive", productprice: 90.00)
-            var product3 = Products(productid: "P003", productname: "Floppy disk", productprice: 50.00)
-            var product4 = Products(productid: "P004", productname: "Monitor", productprice: 300.00)
-            var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
-            var totalProducts = [product1,product2,product3,product4,product5]
-            for P in totalProducts{
-                P.displaydata()
-                }
+          p1.displaydata()
+                
             case 2:
             break
             case 3:
@@ -130,6 +137,15 @@ repeat{
                 default:
                     print(" ")
                 }
+            case 5:
+                print("Enter Product Number:")
+                var pno=readLine()!
+                print("Enter Product Quantity:")
+                var pqty=Int(readLine()!)
+                 //print(pno)
+                //print(pqty!)
+               var shop=ShoppingCart()
+                shop.addcartitem(pno: pno, qty: pqty!)
             default:
                 print(" ")
             }
