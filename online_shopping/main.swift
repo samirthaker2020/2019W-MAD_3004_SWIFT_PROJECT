@@ -10,7 +10,7 @@ import Foundation
 
 var n:Int?
 let c=Customer()
-
+ let s=ShoppingCart()
 var count:Int=0
 var check:Bool=false
 var customername:String?
@@ -142,10 +142,23 @@ repeat{
                 var pno=readLine()!
                 print("Enter Product Quantity:")
                 var pqty=Int(readLine()!)
-                 //print(pno)
-                //print(pqty!)
-               var shop=ShoppingCart()
-                shop.addcartitem(pno: pno, qty: pqty!)
+                if let j=p1.productdetails[pno]
+                {
+                      let cartID = Int.random(in: 0...999)
+                    
+                
+                    var shop=ShoppingCart(proid:pno,cartid:cartID,qty:pqty!,dateadded:Date())
+                   
+                  //  s.addcartitem(shop: shop)
+                    s.productList.append(shop)
+                    print(s.productList.count)
+                    
+                  
+                }
+                else{print("fail")}
+                
+            case 6:
+                s.viewcart()
             default:
                 print(" ")
             }
@@ -177,3 +190,5 @@ repeat{
     
 }
     while(n! <= 4)
+
+

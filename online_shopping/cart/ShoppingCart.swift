@@ -6,47 +6,49 @@ import Foundation
 class ShoppingCart
 {
     private var cartid:Int?
-    var productid:Int?
+    var productid:String?
     var quantity:Int?
-    var dateadded:Int?
+    var dateadded=Date()
     var count:Int?
     var subtotal:Float?
     var total:Float?
-    let orderID = Int.random(in: 0...999)
-    var productList = [Products]()
-    var orderedProduct = Dictionary<Int,[Products]>()
+  
+    var productList = [ShoppingCart]()
+    //var orderedProduct = Dictionary<Int,[Products]>()
     init()
     {
         self.cartid=Int()
-        self.productid=Int()
+        self.productid=String()
         self.quantity=Int()
-        self.dateadded=Int()
+        self.dateadded=Date()
     }
     
-    init(proid:Int,cartid:Int,qty:Int,dateadded:Int)
+    init(proid:String,cartid:Int,qty:Int,dateadded:Date)
     {
         self.productid=proid
         self.cartid=cartid
         self.quantity=qty
         self.dateadded=dateadded
     }
-    
-    func addcartitem(pno:String,qty:Int)
+  
+    func addcartitem(shop:ShoppingCart)
     {
-        if let j=p1.productdetails[pno]
-        {
-            
-            
-        }
-        else{print("fail")}
-        
+        self.productList.append(shop)
+        print(productList)
     }
-   
+   func disp()
+   {
+  
+    print("\( self.productid!)      ||   \(self.cartid!)      ||      \(self.quantity!)    ||  \(self.dateadded)")
+    }
     func viewcart()
-    {
-        for j in 0..<productList.count{
-            print("Product: \(productList[j].productname)")
+    {  print("----------------------CART---------------------------")
+        print("Product ID  ||   CartID   ||     Quantity   ||  Date")
+        for j in self.productList {
+         j.disp()
         }
+       
+      
     }
 }
 
