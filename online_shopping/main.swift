@@ -50,14 +50,31 @@ repeat{
   
         print("Enter Customer Name::")
          customername=readLine()!
+        
         print("Enter UserID::")
-          uid = readLine()!
+        uid = readLine()!
+        while c.checkuser(username: uid!)
+        {
+      
+         print("Already Exsist...Re-Enter Username")
+            uid = readLine()!
+        }
+    
         print("Enter Password::")
         pass = readLine()!
+        
+        while !(pass!.verifyPassword()){
+            print("Password needs to be of length 8 and must contains one uppercase, one digit and one lowercase.")
+            pass = readLine()!
+        }
         print("Enter Address::")
         address = readLine()!
         print("Enter Email::")
      email = readLine()!
+        while !(email!.verifyEmail()){
+            print("Please enter a valid email ID.")
+            email = readLine()!
+        }
         print("Enter Credit Card Info::")
             credicardinfo = readLine()!
         print("Enter Shipping Info::")

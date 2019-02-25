@@ -29,6 +29,18 @@ class Users:IDisplay
         self.pass=pass
        
     }
+    func checkuser(username:String)->Bool
+    {
+        if let _=userlogin[username]
+        {
+            check=true
+        }
+        else
+        {
+            check=false
+        }
+        return check!
+    }
     func displayData(msg: Bool, no: Int) {
         //     print(msg)
         //  print(no)
@@ -62,6 +74,17 @@ class Users:IDisplay
             }else if(msg==false)
             {
                 print("Failed")
+            }else
+            {
+                print("Try again later")
+            }
+        case 4:
+            if(msg==true)
+            {
+                print("User name already exsist!!!")
+            }else if(msg==false)
+            {
+                
             }else
             {
                 print("Try again later")
