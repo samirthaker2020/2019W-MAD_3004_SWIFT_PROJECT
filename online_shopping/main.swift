@@ -103,6 +103,30 @@ repeat{
                         name=readLine()!
                   check =   c.updateprofile(username: uid1, value: name!, caseno: 1)
                     c.displayData(msg: check, no: 3)
+                case 2:
+                    print("Enter New  Address:")
+                    var add:String?
+                    add=readLine()!
+                    check =   c.updateprofile(username: uid1, value: add!, caseno: 2)
+                    c.displayData(msg: check, no: 3)
+                case 3:
+                    print("Enter New  Email:")
+                    var email:String?
+                    email=readLine()!
+                    check =   c.updateprofile(username: uid1, value: email!, caseno: 3)
+                    c.displayData(msg: check, no: 3)
+                case 4:
+                    print("Enter New Credicard Info :")
+                    var ccinfo:String?
+                    ccinfo=readLine()!
+                    check =   c.updateprofile(username: uid1, value:ccinfo!, caseno: 4)
+                    c.displayData(msg: check, no: 3)
+                case 5:
+                    print("Enter New Shipping Info:")
+                    var sinfo:String?
+                    sinfo=readLine()!
+                    check =   c.updateprofile(username: uid1, value: sinfo!, caseno: 5)
+                    c.displayData(msg: check, no: 3)
                 default:
                     print(" ")
                 }

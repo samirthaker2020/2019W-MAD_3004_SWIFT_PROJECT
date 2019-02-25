@@ -64,11 +64,11 @@ class Customer:Users
             print("----------Customer-Profile------------")
             print("-----User:-\(user)--CustomerID-\(u.cid!)--------")
              print("--------------------------------------")
-            print("1 - Customer Name:\(u.customername!)")
-            print("2 - Customer Address:\(u.address!)")
-            print("3 - Customer Email:\(u.email!)")
-            print("4 - Credicard Info:\(u.creditcardinfo!)")
-            print("5 - Shipping Info:\(u.shipppingInfo!)")
+            print("1 - Customer Name:  \(u.customername!)")
+            print("2 - Customer Address:  \(u.address!)")
+            print("3 - Customer Email: \(u.email!)")
+            print("4 - Credicard Info:  \(u.creditcardinfo!)")
+            print("5 - Shipping Info: \(u.shipppingInfo!)")
         }
     }
     func updateprofile(username:String,value:String,caseno:Int) -> Bool
@@ -85,9 +85,54 @@ class Customer:Users
             {
                 c=false
             }
+        case 2:
+        
+            if let u=customerdetails[username]
+            {
+                u.address=value
+                c=true
+            }
+            else
+            {
+                c=false
+            }
+        case 3:
+        
+            if let u=customerdetails[username]
+            {
+                u.email=value
+                c=true
+            }
+            else
+            {
+                c=false
+            }
+        case 4:
+            if let u=customerdetails[username]
+            {
+                u.creditcardinfo=value
+                c=true
+            }
+            else
+            {
+                c=false
+            }
+        case 5:
+            if let u=customerdetails[username]
+            {
+                u.shipppingInfo=value
+                c=true
+            }
+            else
+            {
+                c=false
+            }
+            
+            
         default:
             print(" ")
         }
+        
         return c!
     }
      
