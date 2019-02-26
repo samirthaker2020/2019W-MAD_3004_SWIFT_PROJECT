@@ -208,17 +208,30 @@ repeat{
                 var pno=readLine()!.uppercased()
                 print("Enter New Product Quantity:")
                 var pqty=Int(readLine()!)
-              
-                   check = s.updatequantity(pno:pno,pqty:pqty!)
-                 s.displayData(msg: check, no: 1)
+              if(s.productList.isEmpty==true)
+              {
+                print("Cart is empty")
+                }else
+              {
+                check = s.updatequantity(pno:pno,pqty:pqty!)
+                s.displayData(msg: check, no: 1)
+                }
+                
                 
             case 8:
                 s.viewcart()
                 print("----------------------------------")
                 print("Enter Product Number:")
                 var pno=readLine()!.uppercased()
-               check = s.removeProduct(productId: pno)
-                s.displayData(msg: check, no: 3)
+                if(s.productList.isEmpty==true)
+                {
+                    print("Cart is empty")
+                }else
+                {
+                    check = s.removeProduct(productId: pno)
+                    s.displayData(msg: check, no: 3)
+                }
+         
                 
        
             default:

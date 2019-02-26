@@ -81,7 +81,7 @@ var oderid:Int?
         ordersreceived[self.oderid!]=ods
         
         s.productList.removeAll()
-        
+        print("Order placed!!!!!")
         //print(ordersreceived)
     }
  }
