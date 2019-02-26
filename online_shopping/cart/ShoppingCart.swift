@@ -18,9 +18,11 @@ class ShoppingCart:IDisplay
     var count:Int?
     var subtotal:Float?
     var total:Float?
-  
+    var name:String=""
+    var price:Float=0.0
+      var tprice:Float?
     var productList = [ShoppingCart]()
-    //var orderedProduct = Dictionary<Int,[Products]>()
+    var orderedProduct = Dictionary<Int,[ShoppingCart]>()
     init()
     {
         self.cartid=Int()
@@ -83,14 +85,25 @@ class ShoppingCart:IDisplay
         }
         
         func displaydata() {
-            print("\( self.productid!)      ||   \(self.cartid!)      ||      \(self.quantity!)    ||  \(self.dateadded)")
+            if let pname=p1.productdetails[self.productid!]
+            {
+                tprice=0
+                name=pname.productname
+                price=pname.productprice
+                tprice=(tprice!) + (self.price)
+                
+            }else{name="---"}
+            print("\( self.productid!)      ||   \(self.name)      ||      \(self.quantity!)    ||  \(self.price)")
+           
         }
     func viewcart()
     {  print("----------------------CART---------------------------")
-        print("Product ID  ||   CartID   ||     Quantity   ||  Date")
+        print("Product ID  ||   Product Name   ||     Quantity   ||  Price")
         for j in self.productList {
             j.displaydata()
         }
+        print("---------------------------------------------------------------------")
+ 
     }
     func updatequantity(pno:String,pqty:Int) ->Bool
     {
@@ -120,6 +133,29 @@ class ShoppingCart:IDisplay
         self.productList = arrayNewProducts
         check=true
         return check
+    }
+    
+    func checkout(cid:Int)
+    {
+        orderedProduct[cid]=self.productList
+        for (k,v) in s.orderedProduct
+        {
+            print(k)
+           
+            for i in 0...s.productList.count-1
+            {
+                if let u=p1.productdetails[ v[i].productid!]
+                {
+                    var od=OderDetails()
+                    print(u.productid)
+                    print(u.productname)
+                    print(v[i].quantity!)
+                    print(u.productprice)
+                    let tot=Float(v[i].quantity!) * u.productprice
+                    print(tot)
+                }
+            }
+        }
     }
 }
 

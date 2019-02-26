@@ -34,6 +34,7 @@ var product4 = Products(productid: "P004", productname: "Monitor", productprice:
 var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
 var totalProducts = [product1,product2,product3,product4,product5]
 var p1=Products()
+var od=OderDetails()
 p1.addproducts(pid: "P001", prod: product1)
 p1.addproducts(pid: "P002", prod: product2)
 p1.addproducts(pid: "P003", prod: product3)
@@ -110,7 +111,8 @@ repeat{
           p1.displaydata()
                 
             case 2:
-            break
+                s.checkout(cid:cartID! )
+                od.calc()
             case 3:
                 c.viewprofile(user: username!)
             case 4:
@@ -204,9 +206,13 @@ repeat{
                 var pno=readLine()!.uppercased()
                check = s.removeProduct(productId: pno)
                 s.displayData(msg: check, no: 3)
+                
+       
             default:
                 print(" ")
             }
+            
+            
         }
             while(uno! <= 8)
 
