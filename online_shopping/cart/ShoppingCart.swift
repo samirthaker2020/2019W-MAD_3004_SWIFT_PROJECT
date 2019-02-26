@@ -143,7 +143,7 @@ class ShoppingCart:IDisplay
         orderedProduct[cid]=self.productList
         for (_,v) in s.orderedProduct
         {
-           
+            do{
             for i in 0...s.productList.count-1
             {
                 if let u=p1.productdetails[ v[i].productid!]
@@ -153,7 +153,7 @@ class ShoppingCart:IDisplay
                 }
                  od.calc(list: od)
             }
-            
+            } catch{ print("try again later")}
         }
         od.storedata(oid: cid)
         

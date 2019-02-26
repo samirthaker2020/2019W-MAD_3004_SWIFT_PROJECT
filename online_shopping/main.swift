@@ -45,8 +45,10 @@ p1.addproducts(pid: "P004", prod: product4)
 p1.addproducts(pid: "P005", prod: product5)
 
 repeat{
-    print("Please select an option: \n1 - Register \n2 - User-Login \n3 - Admin-Login \n 4.Dispaly  \n 5.Exit")
-    n = Int(readLine()!)
+    print("Please select an option: \n1 - Register \n2 - User-Login   \n3 - .Exit")
+    do{
+        try n = Int(readLine()!)}
+    catch {break}
     
     switch n{
     case 1:
@@ -117,8 +119,8 @@ repeat{
                 s.checkout(cid:cartID! )
                 ods.ordersummary(oid: cartID!,uid:username!)
                 print("Do you want to place the order::::(Y-Yes | N-No)")
-                let or=readLine()!.uppercased()
-                if (or=="Y")
+                var or=readLine()!.uppercased()
+                if (or=="Y" || or=="y")
                 {
                     ods.placeorder()
                 }
@@ -225,7 +227,7 @@ repeat{
             
             
         }
-            while(uno! <= 8)
+            while(uno! < 9)
 
         
         }
@@ -235,14 +237,9 @@ repeat{
         }
       
     case 3:
-        print("--------------ADMIN--LOGIN--------------------")
-        print("Enter UserID::")
-         adminid = readLine()!
-        print("Enter Password::")
-          adminpass = readLine()!
+    break
         
-    case 4:
-        c.displaydata()
+    
         
        
     default:
@@ -251,6 +248,6 @@ repeat{
     
     
 }
-    while(n! <= 4)
+  while(n! < 3)
 
 
