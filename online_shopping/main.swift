@@ -13,7 +13,7 @@ let c=Customer()
  let s=ShoppingCart()
 var p1=Products()
 var od=OderDetails()
-let ods=Oders()
+var ods=Oders()
 var count:Int=0
 var check:Bool=false
 var customername:String?
@@ -116,12 +116,11 @@ repeat{
             case 2:
                 s.checkout(cid:cartID! )
                 ods.ordersummary(oid: cartID!,uid:username!)
-                
-                print("Do you want to place the oder (Y/y-- YES   ||   N/n--No) ")
-                let ans=readLine()!.uppercased()
-                if(ans=="Y"  || ans=="y")
+                print("Do you want to place the order::::(Y-Yes | N-No)")
+                let or=readLine()!.uppercased()
+                if (or=="Y")
                 {
-                    print("Enter")
+                    ods.placeorder()
                 }
              
                 
