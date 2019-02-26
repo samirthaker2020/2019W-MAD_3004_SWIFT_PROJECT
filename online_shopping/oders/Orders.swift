@@ -12,7 +12,7 @@ import Foundation
     var custid:String?
     var status:String?
     var shipid:String?
-    
+    var tprice:Float=0
     override init() {
         self.oderid=Int()
         self.datecreated=String()
@@ -36,6 +36,35 @@ import Foundation
        super.init()
     }
     
+   
+  
+    func ordersummary(oid:Int,uid:String)
+    {
+        print("******************************************************************")
+        if let us=c.customerdetails[uid]
+        {
+            print("CustomerNumber:\(us.cid!)       CustomerName:\(us.customername!)")
+        }
+        print("************************-ORDER-DETAILS-***************************")
+        print("Order ID ||  Product ID   ||  Product Name    ||  Unitcost    || Quantity  ||    Subtotal")
+        if od.orderdetails[oid] != nil
+        {
+        for (_,v) in s.orderedProduct
+        {
+            
+            for i in 0...s.productList.count-1
+            {
+                if let u=p1.productdetails[ v[i].productid!]
+                {
+                    print("\(od.orderId)  ||  \(u.productid)   ||  \(u.productname)    ||  \(u.productprice)   ||  \(v[i].quantity!)    ||  \(Float(v[i].quantity!) * u.productprice)")
+     tprice=tprice+(Float(v[i].quantity!) * u.productprice)
+                }
+               
+    }
     
-    
+ }
+            print("----------------------------------------------------------------")
+            print("-------------------------------------total--\(tprice)")
+    }
+    }
  }

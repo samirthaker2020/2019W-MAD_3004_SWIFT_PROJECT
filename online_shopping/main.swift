@@ -11,6 +11,9 @@ import Foundation
 var n:Int?
 let c=Customer()
  let s=ShoppingCart()
+var p1=Products()
+var od=OderDetails()
+let ods=Oders()
 var count:Int=0
 var check:Bool=false
 var customername:String?
@@ -27,14 +30,14 @@ var shippinginfo:String?
 var no:Int?
 var uno:Int?
 var cartID:Int?
+ var username:String?
 var product1 = Products(productid: "P001", productname: "Hard Drive", productprice: 120.00)
 var product2 = Products(productid: "P002", productname: "ZIP drive", productprice: 90.00)
 var product3 = Products(productid: "P003", productname: "Floppy disk", productprice: 50.00)
 var product4 = Products(productid: "P004", productname: "Monitor", productprice: 300.00)
 var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
 var totalProducts = [product1,product2,product3,product4,product5]
-var p1=Products()
-var od=OderDetails()
+
 p1.addproducts(pid: "P001", prod: product1)
 p1.addproducts(pid: "P002", prod: product2)
 p1.addproducts(pid: "P003", prod: product3)
@@ -96,7 +99,7 @@ repeat{
        c.displayData(msg: check, no: 2)
       if(check==true)
       {
-        var username:String?
+       
         username=uid1
         repeat{
               print("-------------------WELCOME-------------------")
@@ -112,7 +115,16 @@ repeat{
                 
             case 2:
                 s.checkout(cid:cartID! )
-                od.calc()
+                ods.ordersummary(oid: cartID!,uid:username!)
+                
+                print("Do you want to place the oder (Y/y-- YES   ||   N/n--No) ")
+                let ans=readLine()!.uppercased()
+                if(ans=="Y"  || ans=="y")
+                {
+                    print("Enter")
+                }
+             
+                
             case 3:
                 c.viewprofile(user: username!)
             case 4:

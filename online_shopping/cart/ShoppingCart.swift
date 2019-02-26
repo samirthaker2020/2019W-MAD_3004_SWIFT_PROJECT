@@ -137,25 +137,26 @@ class ShoppingCart:IDisplay
     
     func checkout(cid:Int)
     {
+    //    var proid:String
+       // var pqty:Int
+      //  let od1=OderDetails()
         orderedProduct[cid]=self.productList
-        for (k,v) in s.orderedProduct
+        for (_,v) in s.orderedProduct
         {
-            print(k)
            
             for i in 0...s.productList.count-1
             {
                 if let u=p1.productdetails[ v[i].productid!]
                 {
-                    var od=OderDetails()
-                    print(u.productid)
-                    print(u.productname)
-                    print(v[i].quantity!)
-                    print(u.productprice)
-                    let tot=Float(v[i].quantity!) * u.productprice
-                    print(tot)
+                    od=OderDetails(oderid:v[i].cartid!,pid:v[i].productid!,pname:u.productname,qty:v[i].quantity!,price:u.productprice,subtotal:Float(v[i].quantity!) * u.productprice)
+                   
                 }
+                 od.calc(list: od)
             }
+            
         }
+        od.storedata(oid: cid)
+        
     }
 }
 

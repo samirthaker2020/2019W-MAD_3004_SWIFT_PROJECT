@@ -8,13 +8,7 @@
 
 import Foundation
 class OderDetails:IDisplay {
-    func displaydata() {
-        print(" ")
-    }
     
-    func displaydata(msg: Bool, no: Int) {
-        print("")
-    }
     
     var orderId: Int
     var productId: String
@@ -22,7 +16,7 @@ class OderDetails:IDisplay {
     var quantity: Int
     var unitCost: Float
     var subtotal: Float
-    var orderdetails=Dictionary<Int,OderDetails>()
+    var orderdetails=Dictionary<Int,[OderDetails]>()
      var orderList = [OderDetails]()
     init()
     {
@@ -43,12 +37,36 @@ class OderDetails:IDisplay {
         self.subtotal=subtotal
     }
     
-    func calc()
+    func calc(list:OderDetails)
     {
-        
-      
+        orderList.append(list)
+     // displaydata()
+    }
+    func storedata(oid:Int)
+    {
+       orderdetails[oid]=self.orderList
+    /* for (k,v) in orderdetails
+     {
+        print("key:\(k)::value::\(v)")
+       
+        }*/
+    }
+    func printdata()
+    {
+        print("ODER::\(self.orderId)")
+        print(self.productName)
+        print(self.productId)
+        print(self.quantity)
+        print(self.unitCost)
+        print(self.subtotal)
+    }
+    func displaydata() {
+       print(" ")
     }
     
+    func displaydata(msg: Bool, no: Int) {
+        print("")
+    }
 }
 
 
