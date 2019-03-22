@@ -9,6 +9,7 @@
 import Foundation
 class Products:IDisplay
 {
+  
     func displaydata(msg: Bool, no: Int) {
          print(" ")
     }
@@ -49,7 +50,9 @@ class Products:IDisplay
         {
         print("\(v.productid)            ||   \(v.productname)         ||           \(v.productprice)")
     
+        
         }
      
     }
+    
 }

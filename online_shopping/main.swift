@@ -37,8 +37,8 @@ var product3 = Products(productid: "P003", productname: "Floppy disk", productpr
 var product4 = Products(productid: "P004", productname: "Monitor", productprice: 300.00)
 var product5 = Products(productid: "P005", productname: "iPhone 7 Plus", productprice: 1200.00)
 var totalProducts = [product1,product2,product3,product4,product5]
-
-p1.addproducts(pid: "P001", prod: product1)
+ 
+ p1.addproducts(pid: "P001", prod: product1)
 p1.addproducts(pid: "P002", prod: product2)
 p1.addproducts(pid: "P003", prod: product3)
 p1.addproducts(pid: "P004", prod: product4)
